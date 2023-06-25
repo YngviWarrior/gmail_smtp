@@ -1,3 +1,3 @@
-module github.com/YngviWarrior/gmail_smtp
+module github.com/YngviWarrior/smtp
 
 go 1.20
