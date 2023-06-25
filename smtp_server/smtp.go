@@ -1,4 +1,4 @@
-package smtp_gmail
+package smtp_server
 
 import (
 	"fmt"
