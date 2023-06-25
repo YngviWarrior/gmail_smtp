@@ -1,2 +1,2 @@
-# gmail_smtp
-SMTP Gmail
+# smtp
+SMTP Server

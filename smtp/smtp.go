@@ -5,14 +5,14 @@ import (
 	"net/smtp"
 )
 
-type gmailSmtp struct {
+type smtpServer struct {
 	sender         string
 	senderPassword string
 	server         string
 	port           string
 }
 
-type gmailSmtpInterface interface {
+type smtpInterface interface {
 	SendEmail(to, subject, body string) error
 }
 
@@ -21,8 +21,8 @@ func NewGmailSMTP(
 	senderPassword string,
 	server string,
 	port string,
-) gmailSmtpInterface {
-	return &gmailSmtp{
+) smtpInterface {
+	return &smtpServer{
 		sender:         sender,
 		senderPassword: senderPassword,
 		server:         server,
@@ -30,7 +30,7 @@ func NewGmailSMTP(
 	}
 }
 
-func (s *gmailSmtp) SendEmail(to, subject, body string) (err error) {
+func (s *smtpServer) SendEmail(to, subject, body string) (err error) {
 	var auth smtp.Auth
 	fmt.Println(s.sender, s.senderPassword, s.server)
 	auth = smtp.PlainAuth("", s.sender, s.senderPassword, s.server)
