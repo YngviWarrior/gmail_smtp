@@ -32,7 +32,7 @@ func NewServerSMTP(
 
 func (s *smtpServer) SendEmail(to, subject, body string) (err error) {
 	var auth smtp.Auth
-	fmt.Println(s.sender, s.senderPassword, s.server)
+
 	auth = smtp.PlainAuth("", s.sender, s.senderPassword, s.server)
 	message := fmt.Sprintf("From: %s\r\n"+
 		"To: %s\r\n"+
