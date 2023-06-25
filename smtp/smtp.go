@@ -16,7 +16,7 @@ type smtpInterface interface {
 	SendEmail(to, subject, body string) error
 }
 
-func NewGmailSMTP(
+func NewServerSMTP(
 	sender string,
 	senderPassword string,
 	server string,
